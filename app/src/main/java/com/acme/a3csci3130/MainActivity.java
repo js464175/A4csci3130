@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
             @Override
             protected void populateView(View v, Contact model, int position) {
                 TextView contactName = (TextView)v.findViewById(android.R.id.text1);
-                contactName.setText(model.name);
+                contactName.setText(model.buisnessname);
             }
         };
         contactListView.setAdapter(firebaseAdapter);
@@ -46,8 +46,8 @@ public class MainActivity extends Activity {
             // onItemClick method is called everytime a user clicks an item on the list
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Contact person = (Contact) firebaseAdapter.getItem(position);
-                showDetailView(person);
+                Contact buisness = (Contact) firebaseAdapter.getItem(position);
+                showDetailView(buisness);
             }
         });
     }

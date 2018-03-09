@@ -7,27 +7,6 @@
     tools:context="com.acme.a3csci3130.CreateContactAcitivity">
 
     <EditText
-        android:id="@+id/name"
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:hint="Name"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:hint="e-mail"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
-
-    <EditText
         android:id="@+id/buisnessnumber"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
@@ -35,10 +14,10 @@
         android:layout_marginTop="8dp"
         android:hint="Buisness Number"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/namenew"
+        android:id="@+id/buisnessname"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -48,14 +27,14 @@
         app:layout_constraintTop_toBottomOf="@+id/buisnessnumber" />
 
     <EditText
-        android:id="@+id/address"
+        android:id="@+id/buisnessaddress"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:hint="Address"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/namenew" />
+        app:layout_constraintTop_toBottomOf="@+id/buisnessname" />
 
     <Button
         android:id="@+id/submitButton"
@@ -70,24 +49,26 @@
         app:layout_constraintLeft_toLeftOf="parent"
 
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/primarybuisness" />
+        app:layout_constraintTop_toBottomOf="@+id/buisnesssector" />
 
     <Spinner
-        android:id="@+id/primarybuisness"
+        android:id="@+id/buisnesssector"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address" />
+        app:layout_constraintTop_toBottomOf="@+id/buisnessaddress"
+        android:entries="@array/sectors"/>
 
     <Spinner
-        android:id="@+id/province"
+        android:id="@+id/buisnessprovince"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address" />
+        app:layout_constraintTop_toBottomOf="@+id/buisnessaddress"
+        android:entries="@array/provinces"/>
 
 </android.support.constraint.ConstraintLayout>
