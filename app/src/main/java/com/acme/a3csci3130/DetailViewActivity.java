@@ -36,7 +36,7 @@ public class DetailViewActivity extends Activity {
             buisnesssectorSpinner.setSelection(sectoradaptor.getPosition(receivedBuisnessInfo.buisnesssector));
 
             ArrayAdapter<String> provinceadaptor = (ArrayAdapter<String>) buisnessprovinceSpinner.getAdapter();
-            buisnessprovinceSpinner.setSelection(sectoradaptor.getPosition(receivedBuisnessInfo.buisnessprovince));
+            buisnessprovinceSpinner.setSelection(provinceadaptor.getPosition(receivedBuisnessInfo.buisnessprovince));
         }
     }
 

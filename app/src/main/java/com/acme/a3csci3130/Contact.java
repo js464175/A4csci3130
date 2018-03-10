@@ -38,11 +38,7 @@ public class Contact implements Serializable {
     @Exclude
     public Map<String, Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();
-        /*
-        result.put("uid", uid);
-        result.put("name", name);
-        result.put("email", email);
-        */
+
         result.put("buisnessid", buisnessid);
         result.put("buisnessnum", buisnessnumber);
         result.put("buisnessaddress", buisnessaddress);
