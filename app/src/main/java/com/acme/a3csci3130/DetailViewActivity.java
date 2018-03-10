@@ -23,7 +23,6 @@ public class DetailViewActivity extends Activity {
         buisnessnameField = (EditText) findViewById(R.id.buisnessname);
         buisnessaddressField = (EditText) findViewById(R.id.buisnessaddress);
         buisnessnumberField = (EditText) findViewById(R.id.buisnessnumber);
-
         buisnesssectorSpinner = (Spinner) findViewById(R.id.buisnesssector);
         buisnessprovinceSpinner = (Spinner) findViewById(R.id.buisnessprovince);
 
@@ -31,10 +30,8 @@ public class DetailViewActivity extends Activity {
             buisnessnameField.setText(receivedBuisnessInfo.buisnessname);
             buisnessaddressField.setText(receivedBuisnessInfo.buisnessaddress);
             buisnessnumberField.setText(receivedBuisnessInfo.buisnessnumber);
-
             ArrayAdapter<String> sectoradaptor = (ArrayAdapter<String>) buisnesssectorSpinner.getAdapter();
             buisnesssectorSpinner.setSelection(sectoradaptor.getPosition(receivedBuisnessInfo.buisnesssector));
-
             ArrayAdapter<String> provinceadaptor = (ArrayAdapter<String>) buisnessprovinceSpinner.getAdapter();
             buisnessprovinceSpinner.setSelection(provinceadaptor.getPosition(receivedBuisnessInfo.buisnessprovince));
         }
@@ -43,6 +40,7 @@ public class DetailViewActivity extends Activity {
 
     public void updateContact(View v){
         //TODO: Update contact funcionality
+        
     }
 
     public void eraseContact(View v)
