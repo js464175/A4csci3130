@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class DetailViewActivity extends Activity {
 
     private EditText buisnessnameField, buisnessaddressField, buisnessnumberField;
@@ -18,6 +21,7 @@ public class DetailViewActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_view);
+
         receivedBuisnessInfo = (Contact)getIntent().getSerializableExtra("Contact");
 
         buisnessnameField = (EditText) findViewById(R.id.buisnessname);
@@ -39,12 +43,16 @@ public class DetailViewActivity extends Activity {
 
 
     public void updateContact(View v){
-        //TODO: Update contact funcionality
-        
+
     }
 
     public void eraseContact(View v)
     {
-        //TODO: Erase contact functionality
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+
+        receivedBuisnessInfo = (Contact)getIntent().getSerializableExtra("Contact");
+
+        ref.child("contacts").child(receivedBuisnessInfo.buisnessid).removeValue();
+
     }
 }
