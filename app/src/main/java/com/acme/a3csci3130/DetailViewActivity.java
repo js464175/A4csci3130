@@ -16,6 +16,7 @@ public class DetailViewActivity extends Activity {
     private EditText buisnessnameField, buisnessaddressField, buisnessnumberField;
     private Spinner buisnesssectorSpinner, buisnessprovinceSpinner;
     Contact receivedBuisnessInfo;
+    ArrayAdapter<String> sectoradaptor, provinceadaptor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +35,22 @@ public class DetailViewActivity extends Activity {
             buisnessnameField.setText(receivedBuisnessInfo.buisnessname);
             buisnessaddressField.setText(receivedBuisnessInfo.buisnessaddress);
             buisnessnumberField.setText(receivedBuisnessInfo.buisnessnumber);
-            ArrayAdapter<String> sectoradaptor = (ArrayAdapter<String>) buisnesssectorSpinner.getAdapter();
+            sectoradaptor = (ArrayAdapter<String>) buisnesssectorSpinner.getAdapter();
             buisnesssectorSpinner.setSelection(sectoradaptor.getPosition(receivedBuisnessInfo.buisnesssector));
-            ArrayAdapter<String> provinceadaptor = (ArrayAdapter<String>) buisnessprovinceSpinner.getAdapter();
+            provinceadaptor = (ArrayAdapter<String>) buisnessprovinceSpinner.getAdapter();
             buisnessprovinceSpinner.setSelection(provinceadaptor.getPosition(receivedBuisnessInfo.buisnessprovince));
         }
     }
 
 
     public void updateContact(View v){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
+        ref.child("contacts").child(receivedBuisnessInfo.buisnessid).child("buisnessname").setValue(buisnessnameField.getText().toString());
+        ref.child("contacts").child(receivedBuisnessInfo.buisnessid).child("buisnessaddress").setValue(buisnessaddressField.getText().toString());
+        ref.child("contacts").child(receivedBuisnessInfo.buisnessid).child("buisnessnumber").setValue(buisnessnumberField.getText().toString());
+        ref.child("contacts").child(receivedBuisnessInfo.buisnessid).child("buisnessprovince").setValue(buisnessprovinceSpinner.getSelectedItem().toString());
+        ref.child("contacts").child(receivedBuisnessInfo.buisnessid).child("buisnesssector").setValue(buisnesssectorSpinner.getSelectedItem().toString());
     }
 
     public void eraseContact(View v)
@@ -53,6 +60,5 @@ public class DetailViewActivity extends Activity {
         receivedBuisnessInfo = (Contact)getIntent().getSerializableExtra("Contact");
 
         ref.child("contacts").child(receivedBuisnessInfo.buisnessid).removeValue();
-
     }
 }
