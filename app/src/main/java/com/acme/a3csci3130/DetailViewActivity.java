@@ -42,7 +42,10 @@ public class DetailViewActivity extends Activity {
         }
     }
 
-
+    /**
+     *
+     * @param v
+     */
     public void updateContact(View v){
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
@@ -51,8 +54,14 @@ public class DetailViewActivity extends Activity {
         ref.child("contacts").child(receivedBuisnessInfo.buisnessid).child("buisnessnumber").setValue(buisnessnumberField.getText().toString());
         ref.child("contacts").child(receivedBuisnessInfo.buisnessid).child("buisnessprovince").setValue(buisnessprovinceSpinner.getSelectedItem().toString());
         ref.child("contacts").child(receivedBuisnessInfo.buisnessid).child("buisnesssector").setValue(buisnesssectorSpinner.getSelectedItem().toString());
+
+        finish();
     }
 
+    /**
+     *  Triggers when erase button is pressed. Erases the selected buisness.
+     * @param v
+     */
     public void eraseContact(View v)
     {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
@@ -60,5 +69,7 @@ public class DetailViewActivity extends Activity {
         receivedBuisnessInfo = (Contact)getIntent().getSerializableExtra("Contact");
 
         ref.child("contacts").child(receivedBuisnessInfo.buisnessid).removeValue();
+
+        finish();
     }
 }
