@@ -24,8 +24,7 @@
         android:layout_marginLeft="16dp"
         android:hint="Buisness Number"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buisnessname"
-        app:layout_constraintTop_toBottomOfOf="buisnessname" />
+        app:layout_constraintTop_toBottomOf="@+id/buisnessname"/>
 
 
     <EditText

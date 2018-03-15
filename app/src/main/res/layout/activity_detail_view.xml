@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.acme.a3csci3130.DetailViewActivity">
-    
+
     <EditText
         android:id="@+id/buisnessname"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:hint="Buisness Name"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,10 +22,10 @@
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:hint="Buisness Number"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buisnessname"
-        app:layout_constraintTop_toBottomOfOf="buisnessname" />
+        app:layout_constraintTop_toBottomOf="@+id/buisnessname"/>
 
 
     <EditText
