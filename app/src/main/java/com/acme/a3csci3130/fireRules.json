@@ -1,0 +1,19 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "contacts": {
+      "$buisnessid": {
+        "buisnessnumber": {
+          ".validate": "newData.isString() && newData.val().matches(/^[0-9]{9}$/)"
+        },
+        "buisnessname": {
+          ".validate": "newData.isString() && newData.val().matches(/^.{2,48}$/)"
+        },
+        "buisnessaddress": {
+          ".validate": "newData.isString() && newData.val().matches(/^.{0,50}$/)"
+        }
+      }
+    }
+  }
+}
